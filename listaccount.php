@@ -17,14 +17,15 @@
     <table data-role="table" id="my-table" data-mode="reflow">
       <thead>
         <tr>
-          <th>Doc</th><th>&nbsp;</th><td>&nbsp;</td>
-          <th>Nombre</th><th>&nbsp;</th><td>&nbsp;</td>
-          <th>Tipo</th><th>&nbsp;</th><td>&nbsp;</td>          
-          <th>Fecha Nac</th><th>&nbsp;</th><td>&nbsp;</td>
-          <th>Email</th><th>&nbsp;</th><td>&nbsp;</td>
-          <th>Celular</th><th>&nbsp;</th><td>&nbsp;</td>
-          <th>Formación</th>
-          <th>Disponibilidad</th>
+          <th>DOC</th><th>&nbsp;</th><td>&nbsp;</td>
+          <th>NOMBRE</th><th>&nbsp;</th><td>&nbsp;</td>
+          <th>TIPO</th><th>&nbsp;</th><td>&nbsp;</td>          
+          <th>FECHA NAC</th><th>&nbsp;</th><td>&nbsp;</td>
+          <th>EMAIL</th><th>&nbsp;</th><td>&nbsp;</td>
+          <th>CELULAR</th><th>&nbsp;</th><td>&nbsp;</td>
+          <th>TIPO USUARIO</th><th>&nbsp;</th><td>&nbsp;</td>
+          <th>FORMACION</th><th>&nbsp;</th><td>&nbsp;</td>
+          <th>DISPONIBILIDAD</th><th>&nbsp;</th><td>&nbsp;</td>
         </tr>
       </thead>
       <tbody>
@@ -39,7 +40,12 @@
           <td><?php echo $item['fechnac']; ?></td><td>&nbsp;</td><td>&nbsp;</td>
           <td><?php echo $item['email']; ?></td><td>&nbsp;</td><td>&nbsp;</td>
           <td><?php echo $item['celular']; ?></td><td>&nbsp;</td><td>&nbsp;</td>
-          
+          <td><?php if ($item['tipouser'] ==1){
+          	echo "Formal";
+          }else{
+          	echo "Espóntaneo";
+          }
+          ?></td><td>&nbsp;</td><td>&nbsp;</td>
           <td><?php
           if ($item['formacion']==1){
           	echo "Técnico";
@@ -50,7 +56,7 @@
           }else{
           	echo "Pogrado";
           }
-		?></td>
+		?></td><td>&nbsp;</td><td>&nbsp;</td>
 		<td><?php 
 		if($item['disponibilidad'] == 1){
 		?>

@@ -90,6 +90,13 @@
       					<option value="3">Profesional</option>
       					<option value="4">Posgrado</option>
    						</select>
+					</div>
+					<div data-role="fieldcontain">
+   					<label for="tiposuscripcion">Tipo de usuario</label>
+   						<select name="tipouser" id="tipouser">
+      					<option value="1">Formal</option>
+      					<option value="2">Espóntaneo</option>
+   						</select>
 					</div>					
 					<label for="flip-1">Disponibilidad</label>
 						<select name="disp" id="flip-1" data-role="slider">

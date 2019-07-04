@@ -84,6 +84,8 @@ class Cl_User
 			$dir = mysqli_real_escape_string( $this->_con, $trimmed_data['dirc'] );
 			$ciud = mysqli_real_escape_string( $this->_con, $trimmed_data['ciud'] );
 			$paiss = mysqli_real_escape_string( $this->_con, $trimmed_data['pais'] );
+			$tipuser = mysqli_real_escape_string( $this->_con, $trimmed_data['tipouser'] );
+
 			// Verifica la direccion de correo electrónico:
 			if (filter_var( $trimmed_data['eml'], FILTER_VALIDATE_EMAIL)) {
 				$email = mysqli_real_escape_string( $this->_con, $trimmed_data['eml']);
@@ -91,7 +93,7 @@ class Cl_User
 				throw new Exception( "Por favor, introduce una dirección de correo electrónico válida!" );
 			}
 			
-			$query = "INSERT INTO valuntario (id, nombre, tipodoc, numdoc, tiposang, genero, fechnac, email, celular, formacion, disponibilidad, rango, direccion, ciudad, pais ) VALUES (NULL, '$name', '".$tipdoc."', '$numdoc', '".$tipsang."', '".$genero."', '$fechnac', '$eml', '$cell', '".$formac."', '".$dispo."', '".$range."', '".$dir."','".$ciud."', '".$paiss."')";
+			$query = "INSERT INTO valuntario (id, nombre, tipodoc, numdoc, tiposang, genero, fechnac, email, celular, formacion, disponibilidad, rango, direccion, ciudad, pais, tipouser ) VALUES (NULL, '$name', '".$tipdoc."', '$numdoc', '".$tipsang."', '".$genero."', '$fechnac', '$eml', '$cell', '".$formac."', '".$dispo."', '".$range."', '".$dir."','".$ciud."', '".$paiss."','".$tipuser."' )";
 			$query2 = "INSERT INTO google_maps_php_mysql (id, nombre, direccion, pais, disponibilidad) VALUES (NULL,'$name', '".$dir."','".$paiss."','".$dispo."')";
 
 			if(mysqli_query($this->_con, $query)){
@@ -154,7 +156,7 @@ class Cl_User
 	
 		public function list_account(){
 
-			$query = "SELECT numdoc, nombre, tiposang, fechnac, email, celular, formacion, disponibilidad FROM valuntario";
+			$query = "SELECT numdoc, nombre, tiposang, fechnac, email, celular, formacion, disponibilidad, tipouser FROM valuntario";
 			$result = mysqli_query($this->_con, $query);
 
 			while ($row = mysqli_fetch_assoc($result)){

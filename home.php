@@ -5,9 +5,7 @@
      			<div class="well text-center">
 	     			<p><img src="img/logo.png"></p>					
      			</div>
-     			<br>
-     			
-     			
+     			<br>			
      		</div>
      		<?php require_once 'templates/sidebar.php';?>
      		
