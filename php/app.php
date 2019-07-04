@@ -20,6 +20,7 @@
             </tr>
             </thead>
             <tbody>";
+            
 
   while ($row = mysqli_fetch_array($result)) {
       echo "<tr>";
